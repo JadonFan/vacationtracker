@@ -44,7 +44,7 @@ def create_graph(d: dict[str, Spending]) -> uuid.UUID:
     for name, spending in d.items():
         x = []
         y = []
-        for date, amount in sorted(spending.payments.items(), reverse=True):
+        for date, amount in sorted(spending.payments.items()):
             x.append(date.strftime('%m/%d'))
             y.append(amount)
 
@@ -77,7 +77,7 @@ def create_ranking(d: dict[str, Spending]) -> str:
 
 @bot.command(name='spending')
 async def calculate_spending(ctx, output_form=None):
-    channel = ctx.message.channel
+    channel = ctx.channel
     if not channel:
         raise Exception('Channel not found!')
 
