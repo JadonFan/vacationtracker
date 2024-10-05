@@ -1,12 +1,12 @@
-import discord
-import re
+# import discord
+# import re
 
-from collections import defaultdict
-from typing import override
+# from collections import defaultdict
+# from typing import override
 
-from discord.ext import tasks
+# from discord.ext import tasks
 
-class MyClient(discord.Client):
+# class SpendingClient(discord.Client):
     # def __init__(self, *args, **kwargs):
     #     super().__init__(*args, **kwargs)
 

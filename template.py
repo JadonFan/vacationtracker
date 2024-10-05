@@ -1,9 +1,9 @@
 from typing import Final
 
-from discord import Intents
+import discord
 from discord.ext import commands
 
-intents = Intents.default()
+intents = discord.Intents.default()
 intents.members = True
 intents.message_content = True
 
@@ -34,7 +34,7 @@ async def run_command(ctx):
         content = channel_msg.content
 
         poll = channel_msg.poll
-        reaction = channel_msg.reaction
+        reactions = channel_msg.reactions
         stickers = channel_msg.stickers
 
         # Get the user who sent the channel message.
@@ -68,9 +68,12 @@ async def run_command(ctx):
 
     # Replace <placeholder> with the message you want the bot to send back to
     # the Discord channel.
-    out_msg = "<placeholder>"
-    await ctx.send(out_msg)
+    await ctx.send("<placeholder>")
+
+    # Replace <placeholder> with the name of the file you want the bot to
+    # send back to the Discord channel.
+    await ctx.send(file=discord.File("<placeholder>"))
 
 
-BOT_ID: Final[int] = 0 # replace with your bot id
+BOT_ID: Final[str] = 0 # replace with your bot id
 bot.run(BOT_ID)

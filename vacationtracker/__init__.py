@@ -12,9 +12,9 @@ intents = Intents.default()
 intents.members = True
 intents.message_content = True
 
-# from client import MyClient
+# from client import SpendingClient
 
-# client = MyClient(intents=intents)
+# client = SpendingClient(intents=intents)
 # client.run(os.environ['BOT_KEY'])
 
 from vacationtracker.bot import bot
